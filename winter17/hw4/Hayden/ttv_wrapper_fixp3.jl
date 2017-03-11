@@ -31,5 +31,10 @@ end
 # If transit times of additional planets were observable
 # these would need to be added in.
 #println("param3: ",param)
-return [ttv1;ttv2]
+
+#if any(vcat(param[1:3],param[6:8],param[11:12]).<0) | any(abs(vcat(param[4:5],param[9:10],param[13:14])).>10.)
+#  return(realmax().*ones(size([ttv1;ttv2])))
+#else
+  return [ttv1;ttv2]
+#end
 end
